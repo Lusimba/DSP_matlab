@@ -1,5 +1,0 @@
-t = -5: 5
-u = zeros (size(t));
-u (t>=0)=1
-z = 
-stem (t,u)

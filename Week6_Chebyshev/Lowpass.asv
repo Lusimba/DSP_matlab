@@ -1,0 +1,21 @@
+clc;
+clear all;
+close all;
+fp = input('Enter fp: ');
+fs = input('Enter fs: ');
+rp = input('Enter rp: ');
+rs = input('Enter rs: ');
+if fp>fs
+    Fs=20*fp
+else
+    Fs = 20*fs
+end
+wp = 2*fp/Fs
+ws = 2*fs/Fs
+[h, wc] = cheb1ord(wp, ws, rp, rs)
+title('First Order Chebyshev Low Pass Filter');
+xlabel('Magnitude (dB)');
+ylabel('Frequency(Hz)');
+[b, a] = cheby1(h, rp, wc)
+[h, w] = freqs( b, a, Fs);
+freqz(w, )

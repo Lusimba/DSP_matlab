@@ -1,4 +1,4 @@
-% Overlap Save method for Linear Convolution
+ % Overlap Save method for Linear Convolution
 
 close All
 clear All

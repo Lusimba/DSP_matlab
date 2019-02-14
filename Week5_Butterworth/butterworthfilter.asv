@@ -1,0 +1,16 @@
+fp = input('Enter frequency fp : ');
+fs = input('Enter frequency fs: ');
+rp = input('Enter frequency rp: ');
+rs = input('Enter frequency rs: ');
+
+if fp>fs
+    FS=20*fp
+else
+    FS= 20*fs
+end;
+wp = 2*fp/Fs
+ws = 2*fs/Fs
+[h,wc] = buttord(wp, ws, rp, rs)
+[b,a] = butter(h,wc)
+[h,w] = freqz(b,a,2018,Fs);
+plot
